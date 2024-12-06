@@ -1,6 +1,6 @@
 //
-//  UnguidedPlayerApp.swift
-//  UnguidedPlayer
+// UnguidedPlayerApp.swift
+// UnguidedPlayer
 //
 // Created by Reza Khonsari on 12/7/24.
 // Copyright © 2024 Reza Khonsari. All rights reserved.
