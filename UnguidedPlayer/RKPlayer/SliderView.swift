@@ -53,17 +53,19 @@ struct SliderView: View {
                         .frame(height: Constants.height)
                     
                     HStack {
-                        Rectangle()
-                            .clipShape(
-                                .rect(
-                                    topLeadingRadius: radius,
-                                    bottomLeadingRadius: radius,
-                                    bottomTrailingRadius: 0,
-                                    topTrailingRadius: 0
+                        if sliderVal >= 0 {
+                            Rectangle()
+                                .clipShape(
+                                    .rect(
+                                        topLeadingRadius: radius,
+                                        bottomLeadingRadius: radius,
+                                        bottomTrailingRadius: 0,
+                                        topTrailingRadius: 0
+                                    )
                                 )
-                            )
-                            .frame(width: sliderVal, height: Constants.height)
-                        Spacer()
+                                .frame(width: sliderVal, height: Constants.height)
+                            Spacer()                            
+                        }
                     }
                     
                     GeometryReader { proxy in

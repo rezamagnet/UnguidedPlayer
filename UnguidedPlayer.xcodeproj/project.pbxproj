@@ -7,26 +7,14 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		F55DA2FD2D03C51C0009D6D9 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		F55DA2FE2D03C5230009D6D9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F5C03B742D039792000AC04E /* UnguidedPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnguidedPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		F55DA2F92D03BE4C0009D6D9 /* Exceptions for "UnguidedPlayer" folder in "UnguidedPlayer" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				LICENSE,
-				README.md,
-			);
-			target = F5C03B732D039792000AC04E /* UnguidedPlayer */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		F5C03B762D039792000AC04E /* UnguidedPlayer */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				F55DA2F92D03BE4C0009D6D9 /* Exceptions for "UnguidedPlayer" folder in "UnguidedPlayer" target */,
-			);
 			path = UnguidedPlayer;
 			sourceTree = "<group>";
 		};
@@ -46,6 +34,8 @@
 		F5C03B6B2D039792000AC04E = {
 			isa = PBXGroup;
 			children = (
+				F55DA2FE2D03C5230009D6D9 /* README.md */,
+				F55DA2FD2D03C51C0009D6D9 /* LICENSE */,
 				F5C03B762D039792000AC04E /* UnguidedPlayer */,
 				F5C03B752D039792000AC04E /* Products */,
 			);

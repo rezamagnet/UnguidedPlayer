@@ -17,7 +17,7 @@ let time = CMTime(seconds: 0.5, preferredTimescale: timeScale)
 
 enum PlayerScrubState {
     case reset
-    case scrubStarted
+    case scrubStarted(TimeInterval)
     case scrubEnded(TimeInterval)
 }
 
@@ -163,10 +163,10 @@ final class RKPlayer {
             switch self.scrubState {
             case .reset:
                 displayTimeSubject.send(time.seconds)
-            case .scrubStarted:
+            case .scrubStarted(let seekTime):
                 // When scrubbing, the displayTime is bound to the Slider view, so
                 // do not update it here.
-                break
+                displayTimeSubject.send(seekTime)
             case .scrubEnded(let seekTime):
                 self.scrubState = .reset
                 displayTimeSubject.send(seekTime)

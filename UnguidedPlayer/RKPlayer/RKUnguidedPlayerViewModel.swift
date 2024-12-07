@@ -41,10 +41,11 @@ public final class RKUnguidedPlayerViewModel: ObservableObject {
     
     var displayItemDurationFormattedText: String {
         let unguidedSecond = track.unguidedSecond ?? 0
+        let value = abs(itemDuration - displayTime - unguidedSecond + 1)
         if player?.isUnguidedPart == true {
-            return "+" + durationFormatter.string(from: itemDuration - displayTime - unguidedSecond + 1)!
+            return "+" + durationFormatter.string(from: value)!
         } else {
-            return "-" + durationFormatter.string(from: itemDuration - displayTime - unguidedSecond)!
+            return "-" + durationFormatter.string(from: value - 1)!
         }
     }
     
@@ -89,6 +90,7 @@ public final class RKUnguidedPlayerViewModel: ObservableObject {
     
     func updateScrub(_ scrub: PlayerScrubState) {
         player?.scrubState = scrub
+        isUnguidedPart = player?.isUnguidedPart ?? false
     }
     
     func destroyAll() {

@@ -198,7 +198,7 @@ public struct RKUnguidedPlayerView: View {
                                         unguidedSecond: viewModel.track.unguidedSecond ?? 0
                                     ) { isScrubStarted in
                                         if isScrubStarted {
-                                            viewModel.updateScrub(.scrubStarted)
+                                            viewModel.updateScrub(.scrubStarted(viewModel.displayTime))
                                             fadeInOpacity = 1
                                             
                                         } else {
@@ -216,6 +216,18 @@ public struct RKUnguidedPlayerView: View {
                             .offset(y: -4)
                             .foregroundStyle(Color.accentColor)
                         }
+                        .padding(.horizontal)
+                        
+                        HStack {
+                            Text(viewModel.displayTimeFormattedText)
+                            Spacer()
+                            if viewModel.isPlayerDurationMoreThanZero {
+                                Text(viewModel.displayItemDurationFormattedText)
+                                    .foregroundStyle(viewModel.isUnguidedPart ? .green : .white)
+                            }
+                        }
+                        .foregroundStyle(.white)
+                        .font(.custom(Constants.fontName, size: 12))
                         .padding(.horizontal)
                     }
                     .padding(.bottom, 20)
