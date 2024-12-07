@@ -102,6 +102,16 @@ public final class RKUnguidedPlayerViewModel: ObservableObject {
         trackFavorited = likeAction()
     }
     
+    func mute() {
+        player?.mute()
+        backgroundPlayerManager?.mute()
+    }
+    
+    func unmute() {
+        player?.unmute()
+        backgroundPlayerManager?.unmute()
+    }
+    
     func appearAction() {
         
         // MARK: - sound player handle

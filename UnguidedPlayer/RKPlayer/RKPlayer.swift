@@ -68,6 +68,14 @@ final class RKPlayer {
         avPlayer?.seek(to: time)
     }
     
+    func mute() {
+        avPlayer?.isMuted = true
+    }
+    
+    func unmute() {
+        avPlayer?.isMuted = false
+    }
+    
     func playFromBeginning() {
         seekToBegin()
         play()

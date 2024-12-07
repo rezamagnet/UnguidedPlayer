@@ -56,6 +56,14 @@ class BackgroundPlayerManager {
         }
     }
     
+    func mute() {
+        noisePlayer?.isMuted = true
+    }
+    
+    func unmute() {
+        noisePlayer?.isMuted = false
+    }
+    
     private func setupBackgroundVideo() {
         if let backgroundVideo {
             let asset = AVURLAsset(url: backgroundVideo.url)

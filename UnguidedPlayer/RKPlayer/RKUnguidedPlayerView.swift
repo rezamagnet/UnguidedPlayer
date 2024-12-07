@@ -95,8 +95,13 @@ public struct RKUnguidedPlayerView: View {
     
     var speakerView: some View {
         Button(action: {
+            if speakerButtonState == .mute {
+                viewModel.unmute()
+            } else {
+                viewModel.mute()
+            }
             withAnimation {
-                speakerButtonState =                 speakerButtonState.toggle()
+                speakerButtonState = speakerButtonState.toggle()
                 startFadeAnimation()
             }
         }) {
@@ -263,7 +268,7 @@ public struct RKUnguidedPlayerView: View {
 
 extension RKUnguidedPlayerView {
     struct Constants {
-        static let timer = Timer.publish(every: 5, on: .current, in: .common).autoconnect()
+        static let timer = Timer.publish(every: 3, on: .current, in: .common).autoconnect()
         static let fontName = "Helvetica Neue"
     }
     
