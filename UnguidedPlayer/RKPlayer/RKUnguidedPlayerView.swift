@@ -80,6 +80,7 @@ public struct RKUnguidedPlayerView: View {
     var backwardButtonView: some View {
         Button(action: {
             viewModel.rewindAction()
+            startFadeAnimation()
             withAnimation {
                 isRewinded.toggle()
             }
@@ -185,7 +186,7 @@ public struct RKUnguidedPlayerView: View {
                             }
                         }
                         
-                        Text(viewModel.track.subtitle ?? "No track subtitle")
+                        Text(viewModel.subtitleTile)
                             .foregroundColor(.white)
                             .font(.custom(Constants.fontName, size: 20))
                             .fontWeight(.medium)

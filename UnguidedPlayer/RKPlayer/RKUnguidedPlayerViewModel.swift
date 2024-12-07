@@ -39,6 +39,14 @@ public final class RKUnguidedPlayerViewModel: ObservableObject {
         }
     }
     
+    var subtitleTile: String {
+        if player?.isUnguidedPart == true {
+            return "End of class"
+        } else {
+            return track.subtitle ?? ""
+        }
+    }
+    
     var displayItemDurationFormattedText: String {
         let unguidedSecond = track.unguidedSecond ?? 0
         let value = abs(itemDuration - displayTime - unguidedSecond + 1)
